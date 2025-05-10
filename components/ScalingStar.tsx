@@ -19,9 +19,12 @@ const ScalingStar = () => {
     outputRange:["0deg","360deg"]
   });
 
-
+  const backgroundColor = animationStar.interpolate({
+    inputRange:[0, 0.5,1],
+    outputRange: ["darkblue","lightblue","darkblue"]
+  })
   return (
-    <Animated.View style={[styles.starContainer,{transform:[{rotate}]}]}>
+    <Animated.View style={[styles.starContainer,{transform:[{rotate}],backgroundColor}]}>
       <FontAwesome name="star" size={200} color="gold" />
     </Animated.View>
   );
